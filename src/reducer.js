@@ -2,7 +2,8 @@ import { START_FETCH, END_FETCH_SUCCESS, END_FETCH_FAILURE } from "./actions";
 
 const initialState = {
   isFetching: false,
-  page: 1,
+  perPage: 10,
+  pageInfo: { currentPage: 0, hasNextPage: false },
   media: []
 };
 
@@ -17,7 +18,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        page: action.payload.data.Page.pageInfo.currentPage,
+        pageInfo: action.payload.data.Page.pageInfo,
         media: action.payload.data.Page.media
       };
     case END_FETCH_FAILURE:

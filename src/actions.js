@@ -4,7 +4,7 @@ export const START_FETCH = "START_FETCH";
 export const END_FETCH_SUCCESS = "END_FETCH_SUCCESS";
 export const END_FETCH_FAILURE = "END_FETCH_FAILURE";
 
-export const fetchData = state => dispatch => {
+export const fetchData = page => (dispatch, getState) => {
   dispatch({ type: START_FETCH });
 
   const query = `
@@ -33,8 +33,8 @@ export const fetchData = state => dispatch => {
 
   const variables = {
     search: "",
-    page: 1,
-    perPage: 10
+    page: page ? page : 1,
+    perPage: getState().perPage,
   };
 
   axios

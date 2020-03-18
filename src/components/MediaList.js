@@ -18,7 +18,7 @@ function MediaList(props) {
   return (
     <Container>
       {props.media.map(m => (
-        <MediaCard className="item" media={m} />
+        <MediaCard className="item" key={m.id} media={m} />
       ))}
     </Container>
   );

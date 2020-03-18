@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchData } from "./actions";
 import MediaCard from "./components/MediaCard";
 import MediaList from "./components/MediaList";
+import Pages from "./components/Pages";
 
 function App(props) {
   const handleClick = () => {
@@ -12,6 +13,7 @@ function App(props) {
   return (
     <div className="App">
       <button onClick={handleClick}>Update</button>
+      <Pages />
       {props.isFetching ? <div>Loading...</div> : null}
       <MediaList />
     </div>
