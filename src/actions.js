@@ -1,16 +1,8 @@
 import axios from "axios";
 
-export const UPDATE_HELLO = "UPDATE_HELLO";
 export const START_FETCH = "START_FETCH";
 export const END_FETCH_SUCCESS = "END_FETCH_SUCCESS";
 export const END_FETCH_FAILURE = "END_FETCH_FAILURE";
-
-export const updateHello = newHello => {
-  return {
-    type: UPDATE_HELLO,
-    payload: newHello
-  };
-};
 
 export const fetchData = state => dispatch => {
   dispatch({ type: START_FETCH });
@@ -39,7 +31,7 @@ export const fetchData = state => dispatch => {
   const variables = {
     search: "",
     page: 1,
-    perPage: 10,
+    perPage: 10
   };
 
   axios

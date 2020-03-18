@@ -1,12 +1,6 @@
-import {
-  UPDATE_HELLO,
-  START_FETCH,
-  END_FETCH_SUCCESS,
-  END_FETCH_FAILURE
-} from "./actions";
+import { START_FETCH, END_FETCH_SUCCESS, END_FETCH_FAILURE } from "./actions";
 
 const initialState = {
-  hello: "world!",
   isFetching: false,
   page: 1,
   media: []
@@ -14,11 +8,6 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_HELLO:
-      return {
-        ...state,
-        hello: action.payload
-      };
     case START_FETCH:
       return {
         ...state,
