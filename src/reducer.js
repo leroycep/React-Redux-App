@@ -3,6 +3,7 @@ import { START_FETCH, END_FETCH_SUCCESS, END_FETCH_FAILURE } from "./actions";
 const initialState = {
   isFetching: false,
   perPage: 10,
+  search: "spice",
   pageInfo: { currentPage: 0, hasNextPage: false },
   media: []
 };

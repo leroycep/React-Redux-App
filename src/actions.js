@@ -32,7 +32,7 @@ export const fetchData = page => (dispatch, getState) => {
     `;
 
   const variables = {
-    search: "",
+    search: getState().search,
     page: page ? page : 1,
     perPage: getState().perPage,
   };
