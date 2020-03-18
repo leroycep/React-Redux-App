@@ -8,7 +8,7 @@ export const END_FETCH_FAILURE = "END_FETCH_FAILURE";
 export const fetchData = (page, search) => (dispatch, getState) => {
   dispatch({ type: START_FETCH });
 
-  if (search) {
+  if (search !== undefined) {
     dispatch({ type: UPDATE_SEARCH_TEXT, payload: search });
   }
 
