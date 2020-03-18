@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import { connect } from "react-redux";
 
 import { fetchData } from "./actions";
+import MediaCard from "./components/MediaCard";
+import MediaList from "./components/MediaList";
 
 function App(props) {
   const handleClick = () => {
@@ -13,17 +13,14 @@ function App(props) {
     <div className="App">
       <button onClick={handleClick}>Update</button>
       {props.isFetching ? <div>Loading...</div> : null}
-      {props.media.map(m => (
-        <div>{JSON.stringify(m)}</div>
-      ))}
+      <MediaList />
     </div>
   );
 }
 
 const mapStateToProps = state => ({
   isFetching: state.isFetching,
-  page: state.page,
-  media: state.media
+  page: state.page
 });
 
 export default connect(mapStateToProps, { fetchData })(App);

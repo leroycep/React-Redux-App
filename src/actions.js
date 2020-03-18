@@ -17,8 +17,11 @@ export const fetchData = state => dispatch => {
                 hasNextPage
                 perPage
             }
-            media (search: $search) {
+            media (search: $search, isAdult: false) {
                 id
+                coverImage {
+                    medium
+                }
                 title {
                     romaji
                     english
