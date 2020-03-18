@@ -1,15 +1,25 @@
-import { START_FETCH, END_FETCH_SUCCESS, END_FETCH_FAILURE } from "./actions";
+import {
+  UPDATE_SEARCH_TEXT,
+  START_FETCH,
+  END_FETCH_SUCCESS,
+  END_FETCH_FAILURE
+} from "./actions";
 
 const initialState = {
   isFetching: false,
   perPage: 10,
-  search: "spice",
+  search: "",
   pageInfo: { currentPage: 0, hasNextPage: false },
   media: []
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case UPDATE_SEARCH_TEXT:
+      return {
+        ...state,
+        search: action.payload,
+      };
     case START_FETCH:
       return {
         ...state,
